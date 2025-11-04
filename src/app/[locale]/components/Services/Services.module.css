@@ -34,7 +34,7 @@
   padding: 2em;
   display: flex;
   gap: 4em;
-  align-items: center;
+  align-items: top;
 }
 
 .cardContent {
