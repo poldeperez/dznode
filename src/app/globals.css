@@ -11,7 +11,7 @@
   /* Neutral colors */
   --color-black: #0F1F1E;
   --color-white: #F8F5F2;
-  --color-gray-100: #E6E1D8;
+  --color-gray-100: #c4c2bf;
   --color-gray-200: #D3CDC4;
   --color-gray-300: #B7B1A8;
   --color-gray-700: #4A4A46;
@@ -69,4 +69,50 @@ h1 {
 p {
   font-size: 1.25rem;
   font-weight: 500;
+}
+
+.button-link {
+    opacity: 0;
+    position: relative;
+    padding: 0.75em 2em;
+    font-size: 18px;
+    color: var(--color-black);
+    border: 2px solid var(--color-black);
+    border-radius: 8em;
+    background: none;
+    outline: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    transform: scale(0.95);
+    transition: color 0.2s, background 0.2s, transform 0.3s;
+}
+
+.button-link:hover,
+.button-link:focus {
+    color: var(--color-white);
+    background: var(--color-black);
+}
+
+.button-link-secondary {
+    opacity: 0;
+    position: relative;
+    padding: 0.75em 2em;
+    font-size: 18px;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    border-radius: 8em;
+    background: none;
+    outline: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    transform: scale(0.95);
+    transition: color 0.2s, background 0.2s, transform 0.3s;
+}
+
+.button-link-secondary:hover,
+.button-link-secondary:focus {
+    color: var(--color-black);
+    background: var(--color-white);
 }

@@ -1,5 +1,112 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
+  "home": {
+    "title": "Hola mundo!"
+  },
+  "navigation": {
+    "navigate": "Navigate",
+    "home": "Home",
+    "services": "Services",
+    "works": "Works",
+    "contact": "Contact",
+    "allRights": "All Rights Reserved",
+    "privPolicy": "Privacy Policy",
+    "termsOf": "Terms of Service"
+  },
+  "intro": {
+    "title": "We are a digital studio crafting exceptional experiences through design and technology",
+    "subtitle": "WHO WE ARE WHO WE ARE WHO WE ARE",
+    "ourApproach": "Our Approach",
+    "approach": "We believe in creating digital experiences that are not only visually stunning but also highly functional and user-centric. Every project starts with understanding your goals and audience.",
+    "ourProcess": "Our Process",
+    "process": "From initial concept to final delivery, we work collaboratively with our clients to ensure every detail aligns with their vision. We iterate, refine, and perfect until we implement the experience that best represents our clients identity.",
+    "innDesign": "Innovation meets Design",
+    "design1": "We combine cutting-edge technology with creative design thinking to build products that stand out in the digital landscape.",
+    "design2": "Our goal is to allow our clients to leave an impression through disruptive designs and experiences."
+  },
+  "services": {
+    "title": "What we do",
+    "subtitle": "At <b>dz node</b>, we believe in a collaborative, transparent, and iterative approach. We listen, research, and co-create with you to deliver solutions that are tailored, effective, and future-proof. Every service we offer is rooted in strategy, creativity, and measurable results.",
+    "cards": [
+    {
+      "title": "Web Design",
+      "description":
+        "Designing visually stunning and user-friendly websites that provide an exceptional user experience across all devices.",
+      "qualities": [
+        "Responsive layouts",
+        "UI/UX Design",
+        "Accessibility",
+        "Performance",
+        "User Testing"
+      ],
+      "extraInfo": "Our web designs are not just beautiful—they’re built for usability, speed, and conversion, ensuring your visitors become customers."
+	
+    },
+    {
+      "title": "SEO Optimization",
+      "description":
+        "Implementing effective SEO strategies to improve your website's visibility and ranking on search engines.",
+      "qualities": [
+        "Positioning",
+        "Keyword research",
+        "On-page SEO",
+        "Link building",
+        "Technical audits"
+      ],
+      "extraInfo": "We use the latest techniques to boost your search rankings, increase organic traffic, and maximize your online visibility."
+    },
+    {
+      "title": "Product",
+      "description":
+        "We analyze your business to implement precise products that adapt to your needs. End-to-end process, from the initial study to the deployment in production and its later maintenance.",
+      "qualities": [
+        "UX/UI Design",
+        "User Testing",
+        "Product Prototype",
+        "Web app design",
+        "Database integration",
+        "Business logic"
+      ],
+      "extraInfo": "Our web designs are not just beautiful—they’re built for usability, speed, and conversion, ensuring your visitors become customers."
+    },
+    {
+      "title": "Digital Marketing",
+      "description":
+        "Implementing effective digital marketing strategies to boost your online presence and drive traffic to your website. Applying stratgegies to improve the conversion rate of potential clients.",
+      "qualities": [
+        "Google Ads",
+        "UX/UI experience",
+        "Email campaigns",
+        "Content strategy",
+        "Analytics",
+        "Market research"
+      ],
+      "extraInfo": "From Google Ads to social media, we create campaigns that drive real results and help your business grow online."
+    }
+  ],
+  "serviceButton": "More info"
+  },
+  "works": {
+    "works": "Works",
+    "home1": "Different sectors, different solutions",
+    "home2": "Bringing your ideas to reality",
+    "home3": "Check out our projects",
+    "title": "Our work",
+    "subtitle": "We partner with ambitious brands and organizations to create digital experiences that inspire, engage, and deliver results. Here are some of our favorite projects—each one a story of collaboration, creativity, and measurable impact."
+  },
+  "contact": {
+    "title": "Let's work together",
+    "subtitle": "We'd love to hear about your project",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "tellUs": "Tell us about your project",
+      "sendMessage": "Send Message",
+      "agree": "By clicking you agree to the"
+    }
+  },
+  "CTA": {
+    "title": "Ready to transform your business?",
+    "subtitle": "Let’s talk about your next project and how we can help you succeed.",
+    "button": "Contact us"
   }
 }

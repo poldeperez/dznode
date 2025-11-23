@@ -2,42 +2,38 @@
 
 import { useIntroAnimation } from "./useIntroAnimation";
 import styles from "./Intro.module.css";
+import {useTranslations} from 'next-intl';
 
 export default function Intro() {
   const { titleRef, subtitleRef, columnsRef, modelTextRef } = useIntroAnimation();
+  const t = useTranslations("intro");
 
   return (
     <section className={`intro ${styles.main}`}>
       {/* Main title */}
       <div className={styles.title}>
         <h1 ref={titleRef}>
-          We are a digital studio crafting exceptional experiences through
-          design and technology.
+          {t("title")}
         </h1>
       </div>
 
       {/* Subtitle */}
       <div className={styles.subtitle}>
-        <h2 ref={subtitleRef}>WHO WE ARE WHO WE ARE WHO WE ARE</h2>
+        <h2 ref={subtitleRef}>{t("subtitle")}</h2>
       </div>
 
       {/* Two column section */}
       <div className={styles.columns} ref={columnsRef}>
         <div className={styles.column}>
-          <h3>Our Approach</h3>
+          <h3>{t("ourApproach")}</h3>
           <p>
-            We believe in creating digital experiences that are not only
-            visually stunning but also highly functional and user-centric.
-            Every project starts with understanding your goals and audience.
+            {t("approach")}
           </p>
         </div>
         <div className={styles.column}>
-          <h3>Our Process</h3>
+          <h3>{t("ourProcess")}</h3>
           <p>
-            From initial concept to final delivery, we work collaboratively
-            with our clients to ensure every detail aligns with their vision.
-            We iterate, refine, and perfect until we implement the experience
-            that best represents our clients identity.
+            {t("process")}
           </p>
         </div>
       </div>
@@ -48,12 +44,12 @@ export default function Intro() {
           {/* 3D model will be positioned here via CSS */}
         </div>
         <div className={`modelText ${styles.modelText}`} ref={modelTextRef}>
-          <h2>Innovation meets Design</h2>
+          <h2>{t("innDesign")}</h2>
           <p>
-            We combine cutting-edge technology with creative design thinking
-            to build products that stand out in the digital landscape.<br />
-            Our goal is to allow our clients to leave an impression of themselves 
-            through disruptive designs and experiences.
+            {t("design1")}
+          </p>
+          <p>
+            {t("design1")}
           </p>
         </div>
       </div>

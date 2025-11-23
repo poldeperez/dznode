@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef } from "react";
 import { useSmoothScroll } from "../hooks/useSmoothScroll";
 import { useContactAnimation } from "./useContactAnimation";
 import Header from "../components/Header/Header";
 import styles from "./Contact.module.css";
+import { useTranslations } from "next-intl";
 
 export default function ContactPage() {
   useSmoothScroll();
@@ -15,6 +15,8 @@ export default function ContactPage() {
     infoRef 
   } = useContactAnimation();
 
+  const t = useTranslations("contact");
+
   return (
     <>
     <Header />
@@ -23,10 +25,10 @@ export default function ContactPage() {
       <section className={styles.hero} ref={heroRef}>
         <div className={styles.heroContent}>
           <h2>
-            LET'S WORK<br />TOGETHER
+            {t("title")}
           </h2>
           <p>
-            We'd love to hear about your project
+            {t("subtitle")}
           </p>
         </div>
       </section>
@@ -40,7 +42,7 @@ export default function ContactPage() {
               <form className={styles.form}>
                 <div className={styles.formGroup}>
                   <label htmlFor="name" className={styles.label}>
-                    Name *
+                    {t("form.name")} *
                   </label>
                   <input
                     type="text"
@@ -66,7 +68,7 @@ export default function ContactPage() {
 
                 <div className={styles.formGroup}>
                   <label htmlFor="company" className={styles.label}>
-                    Company
+                    {t("form.company")}
                   </label>
                   <input
                     type="text"
@@ -78,7 +80,7 @@ export default function ContactPage() {
 
                 <div className={styles.formGroup}>
                   <label htmlFor="message" className={styles.label}>
-                    Tell us about your project *
+                    {t("form.tellUs")} *
                   </label>
                   <textarea
                     id="message"
@@ -90,11 +92,14 @@ export default function ContactPage() {
                 </div>
 
                 <button type="submit" className={styles.submitButton}>
-                  <span>Send Message</span>
+                  <span>{t("form.sendMessage")}</span>
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
+                <p className={styles.agree}>
+                  * {t("form.agree")} Terms of Service & Privacy Policy
+                </p>
               </form>
             </div>
 
@@ -105,36 +110,6 @@ export default function ContactPage() {
                 <a href="mailto:hello@depstudio.com" className={styles.infoLink}>
                   hello@depstudio.com
                 </a>
-              </div>
-
-              <div className={styles.infoBlock}>
-                <h3 className={styles.infoTitle}>Phone</h3>
-                <a href="tel:+1234567890" className={styles.infoLink}>
-                  +1 (234) 567-890
-                </a>
-              </div>
-
-              <div className={styles.infoBlock}>
-                <h3 className={styles.infoTitle}>Location</h3>
-                <p className={styles.infoText}>
-                  123 Design Street<br />
-                  Creative City, CC 12345
-                </p>
-              </div>
-
-              <div className={styles.infoBlock}>
-                <h3 className={styles.infoTitle}>Follow</h3>
-                <div className={styles.socialLinks}>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                    Twitter
-                  </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                    Instagram
-                  </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                    LinkedIn
-                  </a>
-                </div>
               </div>
             </div>
           </div>

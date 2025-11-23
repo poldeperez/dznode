@@ -4,6 +4,7 @@ import { useWorksPageAnimation } from "./useWorksPageAnimation";
 import Header from "../components/Header/Header";
 import CTASection from "../components/CTASection/CTASection";
 import styles from "./WorksPage.module.css";
+import { useTranslations } from "next-intl";
 
 const projects = [
 	{
@@ -46,6 +47,7 @@ const projects = [
 
 export default function WorksPage() {
 	const { introRef } = useWorksPageAnimation();
+	const t = useTranslations("works");
 	useSmoothScroll();
 
 	return (
@@ -54,12 +56,9 @@ export default function WorksPage() {
 			<section className={styles.worksSection}>
 				{/* Intro */}
 				<div className={styles.worksIntro} ref={introRef}>
-					<h2>OUR WORK</h2>
+					<h2>{t("title")}</h2>
 					<p>
-						We partner with ambitious brands and organizations to create digital
-						experiences that inspire, engage, and deliver results. Here are some of
-						our favorite projects—each one a story of collaboration, creativity,
-						and measurable impact.
+						{t("subtitle")}
 					</p>
 				</div>
 
