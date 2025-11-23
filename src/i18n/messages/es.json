@@ -1,5 +1,11 @@
 {
-  "HomePage": {
+  "home": {
     "title": "Hola mundo!"
+  },
+  "header": {
+
+  },
+  "intro": {
+    
   }
 }

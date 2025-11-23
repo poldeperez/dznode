@@ -16,6 +16,7 @@
   font-size: clamp(3rem, 7rem, 10rem);
   margin-bottom: 0.7em;
   font-weight: 700;
+  text-transform: uppercase;
   color: var(--color-white);
   transform: scaleY(1.15);
   letter-spacing: 0.02em;
@@ -24,10 +25,14 @@
 .servicesIntro p {
   font-size: clamp(1.2rem, 1.5rem, 1.8rem);
   font-weight: 300;
-  color: var(--color-white);
-  opacity: 0.75;
+  color: var(--color-gray-100);
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.boldWhite {
+  font-weight: bold;
+  color: var(--color-white);
 }
 
 .servicesTabsWrapper {
@@ -42,6 +47,7 @@
   display: flex;
   flex-direction: column;
   min-width: 200px;
+  max-width: 210px;
   background: transparent;
   border: 1.5px solid #e2e8f0;
   box-shadow: none;
@@ -167,14 +173,14 @@
 }
 
 .extraInfo {
-  font-size: 1rem;
   color: #222;
   opacity: 0.8;
   margin-top: 0.5em;
+  font-size: 1.25rem;
 }
 
 .cardText p {
-  margin-bottom: 1.2em; /* Adds space between the paragraph and the list */
+  margin-bottom: 1.2em; 
 }
 
 /* Responsive adjustments */

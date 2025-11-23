@@ -32,6 +32,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 2;
+}
+.rowsWrapper {
+    position: relative;
+    z-index: 1;
 }
 
 .row {
@@ -85,18 +90,7 @@
     transform: translateY(30px);
 }
 
-.button {
-    position: relative;
-    padding: 1em 2em;
-    font-size: 18px;
-    color: var(--color-white);
-    border: 2px solid var(--color-white);
-    border-radius: 8em;
-    background: none;
-    outline: none;
-    transform: translateY(30px);
-    opacity: 0;
-}
+
 
 @media(max-width: 900px) {
     .card {

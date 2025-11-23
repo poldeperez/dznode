@@ -1,9 +1,10 @@
 import { useProductsAnimations } from './useProductsAnimations';
 import styles from './Products.module.css';
-import Link from "next/link";
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function Products() {
-    
+    const t = useTranslations("works");
     const containerRef = useProductsAnimations();
 
     const generateRows = () => {
@@ -30,20 +31,22 @@ export default function Products() {
                 </div>
                 <div className={styles.copy}>
                     <div className={`line ${styles.line}`}>
-                        <p>Our work Our work our work</p>
+                        <p>{t("home1")}</p>
                     </div>
                     <div className={`line ${styles.line}`}>
-                        <p>Our work Our work our work</p>
+                        <p>{t("home2")}</p>
                     </div>
                     <div className={`line ${styles.line}`}>
-                        <p>Our work Our work our work</p>
+                        <p>{t("home3")}</p>
                     </div>
                 </div>
-                <div className="btn">
-                    <button className={`button ${styles.button}`}>WORKS</button>
-                </div>
+                <Link href="/works" className="button-link-secondary">
+                    {t("works")}
+                </Link>
             </div>
-            {generateRows()}
+            <div className={styles.rowsWrapper}>
+                {generateRows()}
+            </div>
         </section>
     );
 }

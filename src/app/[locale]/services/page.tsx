@@ -6,63 +6,17 @@ import { useServicesPageAnimation } from "./useServicesPageAnimation";
 import Header from "../components/Header/Header";
 import styles from "./ServicesPage.module.css";
 import CTASection from "../components/CTASection/CTASection";
-
-export const servicesData = [
-	{
-		title: "Brand Strategy",
-		description:
-			"Crafting unique brand identities that resonate with your target audience and set you apart from the competition.",
-		qualities: ["Market research", "Positioning", "Messaging", "Visual identity"],
-		extraInfo:
-			"We analyze your market, competitors, and audience to craft a unique brand identity that stands out and connects emotionally.",
-	},
-	{
-		title: "Web Design",
-		description:
-			"Designing visually stunning and user-friendly websites that provide an exceptional user experience across all devices.",
-		qualities: [
-			"Responsive layouts",
-			"UI/UX best practices",
-			"Accessibility",
-			"Performance",
-		],
-		extraInfo:
-			"Our web designs are not just beautiful—they’re built for usability, speed, and conversion, ensuring your visitors become customers.",
-	},
-	{
-		title: "Digital Marketing",
-		description:
-			"Implementing effective digital marketing strategies to boost your online presence and drive traffic to your website.",
-		qualities: [
-			"Social media",
-			"Email campaigns",
-			"Content strategy",
-			"Analytics",
-		],
-		extraInfo:
-			"From SEO to social media, we create campaigns that drive real results and help your business grow online.",
-	},
-	{
-		title: "SEO Optimization",
-		description:
-			"Implementing effective SEO strategies to improve your website's visibility and ranking on search engines.",
-		qualities: [
-			"Keyword research",
-			"On-page SEO",
-			"Link building",
-			"Technical audits",
-		],
-		extraInfo:
-			"We use the latest techniques to boost your search rankings, increase organic traffic, and maximize your online visibility.",
-	},
-];
+import { useTranslations } from "next-intl";
+import { CardProps } from "../components/Services/ServiceCard"
 
 export default function ServicesPage() {
 	const { introRef } = useServicesPageAnimation();
 	useSmoothScroll();
+	const t = useTranslations("services");
+	const servicesData = t.raw("cards");
 
-	// Default to Web Design (index 1)
-	const [activeIdx, setActiveIdx] = useState(1);
+	// Default to Web Design (index 0)
+	const [activeIdx, setActiveIdx] = useState(0);
 
 	return (
 		<>
@@ -70,12 +24,11 @@ export default function ServicesPage() {
 			<section className={styles.servicesSection}>
 				{/* Intro */}
 				<div className={styles.servicesIntro} ref={introRef}>
-					<h2>WHAT WE DO</h2>
+					<h2>{t("title")}</h2>
 					<p>
-						At dep studio, we believe in a collaborative, transparent, and iterative
-						approach. We listen, research, and co-create with you to deliver solutions
-						that are tailored, effective, and future-proof. Every service we offer is
-						rooted in strategy, creativity, and measurable results.
+						{t.rich("subtitle", {
+							b: (chunks) => <strong className={styles.boldWhite}>{chunks}</strong>,
+						})}
 					</p>
 				</div>
 
@@ -83,7 +36,7 @@ export default function ServicesPage() {
 				<div className={styles.servicesTabsWrapper}>
 					{/* Tabs */}
 					<div className={styles.tabsColumn}>
-						{servicesData.map((service, idx) => (
+						{servicesData.map((service: CardProps, idx: number) => (
 							<button
 								key={service.title}
 								className={`${styles.tabButton} ${activeIdx === idx ? styles.activeTab : ""
@@ -107,14 +60,14 @@ export default function ServicesPage() {
 									<div className={styles.cardText}>
 										<p>{servicesData[activeIdx].description}</p>
 										<ul className={styles.cardQualities}>
-											{servicesData[activeIdx].qualities.map((q, i) => (
+											{servicesData[activeIdx].qualities.map((q: string, i: number) => (
 												<li key={i}>{q}</li>
 											))}
 										</ul>
 									</div>
 									<div className={styles.cardImg}>
 										<img
-											src={`/assets/card-${activeIdx + 1}.jpg`}
+											src={`/assets/service-${activeIdx + 1}.jpg`}
 											alt={servicesData[activeIdx].title}
 										/>
 									</div>

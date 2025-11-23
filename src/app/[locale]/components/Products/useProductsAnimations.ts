@@ -9,7 +9,7 @@ export function useProductsAnimations() {
         const scrollTriggerSettings = {
             trigger: ".logo",
             start: "top 55%",
-            endTrigger: ".btn",
+            endTrigger: ".button-link-secondary",
             end: "top 20%",
             toggleActions: "play reverse play reverse",
             pinSpacing: true,
@@ -61,7 +61,7 @@ export function useProductsAnimations() {
             scrollTrigger: scrollTriggerSettings,
         });
 
-        gsap.to(".button", {
+        gsap.to(".button-link-secondary", {
             y: 0,
             opacity: 1,
             delay: 0.25,
